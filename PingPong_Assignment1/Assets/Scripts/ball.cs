@@ -11,6 +11,12 @@ public class ball : MonoBehaviour
     // Current direction of the ball's movement (normalized vector)
     public Vector2 direction;
 
+    // Player 1 Score
+    public int playerOneScore=0;
+
+    // Player 2 Score
+    public int playerTwoScore=0;
+
     void Start()
     {
         // Get the Rigidbody2D component attached to this GameObject
@@ -28,6 +34,15 @@ public class ball : MonoBehaviour
         // Multiplying by speed sets how fast the ball moves
         rb.linearVelocity = direction * speed;
     }
+    void ResetBall()
+{
+    // Reset position to center
+    transform.position = Vector2.zero;
+
+    // Start moving in a random horizontal direction with small vertical variation
+    direction = new Vector2(Random.Range(0, 2) == 0 ? 1 : -1, Random.Range(-0.2f, 0.2f)).normalized;
+}
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,7 +59,7 @@ public class ball : MonoBehaviour
         }
 
         // If the ball hits the left paddle
-        if (collision.gameObject.CompareTag("leftPaddle"))
+        else if (collision.gameObject.CompareTag("leftPaddle"))
         {
             direction.x = -direction.x; // Flip horizontal direction (bounce back)
 
@@ -54,6 +69,39 @@ public class ball : MonoBehaviour
             // Normalize the direction to maintain consistent speed
             direction = direction.normalized;
         }
+
+         else if (collision.gameObject.CompareTag("bottomWall"))
+        {
+            direction.y = -direction.y; // Flip vertical direction (bounce back)
+        }
+
+        else if (collision.gameObject.CompareTag("topWall"))
+        {
+            direction.y = -direction.y; // Flip vertical direction (bounce back)
+        }
+
+        else if (collision.gameObject.CompareTag("leftWall")){
+            // Adds a point for player 2
+            playerTwoScore++;
+
+            Debug.Log("Player 2 Score: " + playerTwoScore); // Shows Player 2's score in console
+
+            // Resets the ball after each point till 5.
+            ResetBall();
+        }
+
+        else if (collision.gameObject.CompareTag("rightWall")){
+            // Adds a point for player 2
+            playerOneScore++;
+
+            Debug.Log("Player 1 Score: " + playerOneScore); // Shows Player 2's score in console
+
+            // Resets the ball after each point till 5.
+            ResetBall();
+        }
+
+        
+
     }
 }
 
