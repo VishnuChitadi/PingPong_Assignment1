@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 1028018818}
   m_Layer: 0
   m_Name: leftWall
-  m_TagString: leftWall
+  m_TagString: rightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 1357673590}
   m_Layer: 0
   m_Name: rightWall
-  m_TagString: rightWall
+  m_TagString: leftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1723,8 +1723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2599141aca1a33148ae83bc0d541fb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerOneScore: {fileID: 451618208}
-  playerTwoScore: {fileID: 2025416254}
+  playerOneScore: {fileID: 2025416254}
+  playerTwoScore: {fileID: 451618208}
   playerOneWinner: {fileID: 1046311571}
   playerTwoWinner: {fileID: 1723705549}
 --- !u!4 &1531208515
