@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38244958a47b27e489882ff75159ecec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 5
+  speed: 2
   direction: {x: 0, y: 0}
   scoreManager: {fileID: 0}
 --- !u!1 &1028018815
@@ -1723,8 +1723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2599141aca1a33148ae83bc0d541fb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerOneScore: {fileID: 2025416254}
-  playerTwoScore: {fileID: 451618208}
+  playerOneScore: {fileID: 451618208}
+  playerTwoScore: {fileID: 2025416254}
   playerOneWinner: {fileID: 1046311571}
   playerTwoWinner: {fileID: 1723705549}
 --- !u!4 &1531208515
