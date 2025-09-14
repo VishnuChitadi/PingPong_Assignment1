@@ -11,16 +11,17 @@ public class ball : MonoBehaviour
     // Current direction of the ball's movement (normalized vector)
     public Vector2 direction;
 
-    // Player 1 Score
-    public int playerOneScore=0;
-
-    // Player 2 Score
-    public int playerTwoScore=0;
+    // reference  to the score manager
+    public scoreManager scoreManager;
 
     void Start()
     {
         // Get the Rigidbody2D component attached to this GameObject
         rb = GetComponent<Rigidbody2D>();
+
+        // find the scoreManager in the scene if not already linked in Inspector
+        if (scoreManager == null)
+            scoreManager = FindObjectOfType<scoreManager>();
 
         // Initialize ball movement:
         // Starts moving mostly horizontally (right) with a small random vertical component
@@ -82,19 +83,19 @@ public class ball : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("leftWall")){
             // Adds a point for player 2
-            playerTwoScore++;
-
-            Debug.Log("Player 2 Score: " + playerTwoScore); // Shows Player 2's score in console
+            
+            scoreManager.AddScore(2);
+            
 
             // Resets the ball after each point till 5.
             ResetBall();
         }
 
         else if (collision.gameObject.CompareTag("rightWall")){
-            // Adds a point for player 2
-            playerOneScore++;
-
-            Debug.Log("Player 1 Score: " + playerOneScore); // Shows Player 2's score in console
+            // Adds a point for player 1
+           
+            scoreManager.AddScore(1);
+            
 
             // Resets the ball after each point till 5.
             ResetBall();

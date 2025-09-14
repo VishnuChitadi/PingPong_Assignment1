@@ -11,6 +11,12 @@ TagManager:
   - bottomWall
   - leftWall
   - rightWall
+  - playerOne
+  - playerTwo
+  - scoreManager
+  - gameOver
+  - playerOneWins
+  - playerTwoWins
   layers:
   - Default
   - TransparentFX
