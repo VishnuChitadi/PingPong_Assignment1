@@ -19,12 +19,7 @@ public class scoreManager : MonoBehaviour
     private int maxScore = 5;
 
     // Called when the game starts
-    void Start()
-    {
-        // Set default score text colors (optional)
-        playerOneScore.color = Color.black;   // Player 1 score always black
-        playerTwoScore.color = Color.black;   // Player 2 score always black
-    }
+    
 
     // Call this method to add a point to a player
     // input = 1 for Player 1, 2 for Player 2
